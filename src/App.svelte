@@ -1,8 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
-	export let name;
 	import * as help from './mainhelper';
 	import Quote from './components/Quote.svelte'
+	
+	export let name;
 	
 	let response;
 
