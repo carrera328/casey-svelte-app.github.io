@@ -5,19 +5,25 @@
 	
 	export let name;
 
+	let loading = true;
 	let response;
 
 	onMount(async () => {
 		response = await help.getdata().then(data => data.json());
-		console.log(response); 
+		name = response[1].content; 
+		loading = false;
+		console.log('name', name);
 	})
 	// todo
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<Quote></Quote>
-	
+	{#if loading}
+		<h1>Fuck loading</h1>
+	{:else}
+		<h1>Hello {name}!</h1>
+		<Quote></Quote>
+	{/if}
 </main>
 
 <style>
@@ -25,8 +31,6 @@
 		padding: 0;
 		width: 100vw;
 		height: 100%;
-
-
 	}
 	main {
 		text-align: center;
