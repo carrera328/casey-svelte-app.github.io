@@ -4,12 +4,12 @@
 	import Quote from './components/Quote.svelte'
 	
 	export let name;
-	
+
 	let response;
 
 	onMount(async () => {
 		response = await help.getdata().then(data => data.json());
-		console.log('res', response);
+		name = response[1].content; 
 	})
 	// todo
 </script>
