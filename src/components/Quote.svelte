@@ -1,5 +1,5 @@
 <script>
-    alert('fuck');
+    alert('fuck vato');
 </script>
 
 <h1>
