@@ -9,7 +9,7 @@
 
 	onMount(async () => {
 		response = await help.getdata().then(data => data.json());
-		name = response[1].content; 
+		console.log(response); 
 	})
 	// todo
 </script>
