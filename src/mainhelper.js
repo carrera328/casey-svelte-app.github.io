@@ -1,5 +1,5 @@
 export const getdata = () => {
-    return fetch('http://www.dashcatsoftware.com/casey', {
+    return fetch(CASEY_URL, {
         method: 'GET'
     })
 }

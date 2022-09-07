@@ -4,6 +4,10 @@ import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import replace from '@rollup/plugin-replace';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -43,6 +47,10 @@ export default {
 				dev: !production
 			}
 		}),
+		replace({
+            CASEY_URL: JSON.stringify(process.env.CASEY_URL)
+        }),
+		
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),

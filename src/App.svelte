@@ -8,6 +8,8 @@
 	let loading = true;
 	let response;
 
+	console.log('asdafs', URL);
+
 	onMount(async () => {
 		response = await help.getdata().then(data => data.json());
 		name = response[1].content; 
