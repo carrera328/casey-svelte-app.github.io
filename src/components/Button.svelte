@@ -25,6 +25,8 @@
 
 <style>
   button {
+    font-family: inherit;
+    font-size: 1em;
     height: 100%;
     background-color: #535E4B;
     color: white;

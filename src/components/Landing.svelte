@@ -15,9 +15,10 @@
 
 <style>
     main {
+        font-family: inherit;
+        font-size: 1em;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        background-color: red;
         width: 100%;
         position: absolute;
         bottom: 30%;

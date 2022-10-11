@@ -1,3 +1,4 @@
+
 <script>
 	import { onMount } from 'svelte';
 	import * as help from './mainhelper';
@@ -95,9 +96,10 @@
 
 <style>
 
+	
+	
 	body, html {
-		box-sizing: border-box;
-		
+		box-sizing: border-box;		
 	}
 
 
@@ -105,6 +107,7 @@
 		height: 100%;
 		width: 100%;
 		box-sizing: border-box; 	
+		font-family: inherit;
 	}
 
 	.wrapper {
