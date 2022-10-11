@@ -1,5 +1,8 @@
-export const getdata = () => {
+export const getdata = (requestInfo) => {
+    console.log('req', requestInfo);
     return fetch(CASEY_URL, {
-        method: 'GET'
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(requestInfo)
     })
 }
