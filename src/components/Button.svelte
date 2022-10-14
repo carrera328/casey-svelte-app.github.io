@@ -26,9 +26,16 @@
 <style>
   button {
     font-family: inherit;
-    font-size: 1em;
+    font-size: inherit;
+    
     height: 100%;
     background-color: #535E4B;
     color: white;
+    padding: 0;
+    border: none;
+    outline: none;
+    /* background: none; */
   }
+
+  button:focus { outline: none; }
 </style>

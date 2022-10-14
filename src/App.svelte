@@ -6,18 +6,16 @@
 	import Landing from './components/Landing.svelte';
 
 	
-	let quotes = [];
-	let quote = 'Hai Cboosaur';
-	let loading = true;
+	// let quotes = [];
+	let quote = `Happy 3 Years! `;
+	let emojis = ` \u2600\uFE0F \uD83C\uDF63`;
+	
 	let container;
-	let processedData;
+	
 
 	
 	onMount(async () => {
-		// quotes = await help.getdata().then(data => data.json());
-		// loading = false;
-		// processedData = groupBy([...quotes], 'Type');
-		// console.log('processed', processedData);
+		
 		addEventListeners();
 	})
 
@@ -26,19 +24,16 @@
 		// get all 
 
 		let list;
-
-		console.log('evt', event);
+		emojis = '';
 
 		if (event.detail == 'random') {
 			const types = ['love', 'funny', 'fun_facts'];
 			const randomNum = Math.floor(Math.random() * types.length);
-			console.log('ran', randomNum);
 			list = await help.getdata({type: types[randomNum]}).then(data => data.json());
-			//list = quotes;
 		} else {
-			//list = await processedData[event.detail];
+
 			list = await help.getdata({type: event.detail}).then(data => data.json());
-			console.log('list', list);
+			
 		}
 
 		
@@ -76,32 +71,21 @@
 </script>
 
 <main bind:this={container}>
-	
-	<!-- {#if loading}
-		
-		<h1>Fuck loading</h1>
-
-		{:else}
-		
-		
-	
-	{/if} -->
-
 	<div class='wrapper'>
-		<Quote text={quote}/>
-		<Landing on:quoteclick={handleEvent}></Landing>
-	</div>
-	
+		<div></div>
+		<Quote class='quote' text={quote} emojis={emojis}/>
+		<div class='landing'>
+			<Landing  on:quoteclick={handleEvent}></Landing>
+		</div>
+		
+	</div>	
 </main>
 
 <style>
-
-	
 	
 	body, html {
 		box-sizing: border-box;		
 	}
-
 
 	main {
 		height: 100%;
@@ -112,8 +96,16 @@
 
 	.wrapper {
 		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
 	}
 
+	.quote {
+		max-height: 20px !important;
+	}
+
+	
 
 	h1 {
 		width: 100%;

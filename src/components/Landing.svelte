@@ -19,10 +19,9 @@
         font-size: 1em;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        width: 100%;
-        position: absolute;
-        bottom: 30%;
+        width: 95%;
         row-gap: 0;
         column-gap: 0;
+        margin: 0 auto;
     }
 </style>
